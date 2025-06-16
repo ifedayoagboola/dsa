@@ -1,15 +1,15 @@
 function areAllCharactersUnique(str) {
-  let charCount = {}
-  
-  for(let i =0; i<str.length; i++){
-    const char = str[i]
+  let charCount = {};
 
-    if(charCount[char]){
-        return false
+  for (let i = 0; i < str.length; i++) {
+    const char = str[i];
+
+    if (charCount[char]) {
+      return false;
     }
-    charCount[char] = true
+    charCount[char] = true;
   }
-  return true
+  return true;
 }
 
 module.exports = areAllCharactersUnique;
