@@ -4,11 +4,8 @@ function binaryGap(int) {
   }
 
   const bin = int.toString(2);
-  let firstIndex;
-  let lastIndex;
-  let chars = 0
-  let countArr = []
 
+  let firstIndex;
   for (let i = 0; i < bin.length; i++) {
     const char = bin[i];
     if (char === "1") {
@@ -17,7 +14,8 @@ function binaryGap(int) {
     }
   }
 
-   for (let i = bin.length; i > 0; i--) {
+  let lastIndex;
+  for (let i = bin.length; i > 0; i--) {
     const char = bin[i];
     if (char === "1") {
       lastIndex = i;
@@ -25,12 +23,25 @@ function binaryGap(int) {
     }
   }
 
+  let chars = "";
+  for (let i = firstIndex + 1; i < lastIndex; i++) {
+    const char = bin[i];
+    chars += char;
+  }
 
-     for (let i = firstIndex; i <= lastIndex; i++) {
-            const char = bin[i];
-   
-   }
-  console.log(firstIndex, lastIndex, bin, count);
+  const diff = chars.split("1");
+  if (!diff) {
+    return 0;
+  }
+
+  let count = 0;
+  for (const oct of diff) {
+    if (oct.length > count) {
+      count = oct.length;
+    }
+  }
+
+  return count;
 }
 
 module.exports = binaryGap;
