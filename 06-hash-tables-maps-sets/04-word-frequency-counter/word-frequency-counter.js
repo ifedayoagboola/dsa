@@ -1,18 +1,18 @@
 function wordFrequencyCounter(str) {
   const words = str.toLowerCase().split(/\W+/);
+  const frequencyCount = new Map();
 
-  const wordFrequency = new Map();
   for (const word of words) {
     if (word === "") continue;
-    
-    if (wordFrequency.has(word)) {
-      wordFrequency.set(word, wordFrequency.get(word) + 1);
-    } else {
-      wordFrequency.set(word, 1);
-    }
 
+    if (frequencyCount.has(word)) {
+      frequencyCount.set(word, frequencyCount.get(word) + 1);
+    } else {
+      frequencyCount.set(word, 1);
+    }
   }
-  return wordFrequency;
+
+  return frequencyCount;
 }
 
 module.exports = wordFrequencyCounter;
