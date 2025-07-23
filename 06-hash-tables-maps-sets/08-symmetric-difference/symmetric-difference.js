@@ -17,6 +17,7 @@ function symmetricDifference(arr1, arr2) {
   }
 
   return result;
+
 }
 
 module.exports = symmetricDifference;
